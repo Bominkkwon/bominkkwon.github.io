@@ -1,1 +1,0 @@
-# bominkkwon.github.io
