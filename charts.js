@@ -70,7 +70,7 @@ function buildCharts(sample) {
 
     // 3. Create a variable that holds the washing frequency.
    
-    var wfreq = data.metadata.map(d => d.wfreq)
+    var wfreq = data.metadata.map(data => data.wfreq)
     console.log(`Washing Freq: ${wfreq}`)
 
     // Create the yticks for the bar chart.
@@ -128,7 +128,7 @@ function buildCharts(sample) {
     // 4. Create the trace for the gauge chart.
     var gaugeData = [
     {
-      gauge: {axis: { range: [null, 10], tickwidth: 1, tickcolor: "black" },
+      gauge: {axis: { range: [null, 10], tickwidth: 2, tickcolor: "black" },
       steps: [
         { range: [0, 2], color: "red" },
         { range: [2, 4], color: "orange" },
