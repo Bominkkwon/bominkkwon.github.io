@@ -70,8 +70,11 @@ function buildCharts(sample) {
 
     // 3. Create a variable that holds the washing frequency.
    
-    var wfreq = data.metadata.map(data => data.wfreq)
-    console.log(`Washing Freq: ${wfreq}`)
+    var metadata = data.metadata;
+    var gaugeArray = metadata.filter(metaObj => metaObj.id == sample);  
+    var gaugeResult = gaugeArray[0];
+    var wfreqs = gaugeResult.wfreq;
+    console.log(wfreqs)
 
     // Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order 
@@ -136,7 +139,7 @@ function buildCharts(sample) {
         { range: [6, 8], color: "lime" },
         { range: [8, 10], color: "green" },
       ]},
-      value: parseFloat(wfreq),
+      value: parseFloat(wfreqs),
       title: { text: "Scrubs per Week" },
       type: "indicator",
       mode: "gauge+number"
